@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --fg: #1a2230;
+  --muted: #56627a;
+  --line: #dde3ec;
+  --accent: #1f4f8f;
+  --accent-soft: #e3ebf6;
+  --ochre: #8a5d0c;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0f141c;
+  --surface: #161d28;
+  --fg: #e3e8ef;
+  --muted: #9aa6b8;
+  --line: #263041;
+  --accent: #8fb4ee;
+  --accent-soft: #1c2a40;
+  --ochre: #e0b060;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ochre: var(--ochre);
+  --font-display: var(--font-bricolage);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+@theme {
+  --breakpoint-desk: 53.75rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
