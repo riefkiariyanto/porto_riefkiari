@@ -144,7 +144,7 @@ export const projects: Project[] = [
       "Landing page perusahaan dengan halaman Tentang, Layanan, Karya, dan Kontak. Bagian hero berupa slider gambar silinder 3D dengan Three.js, dilengkapi animasi gulir dan transisi halaman dengan GSAP serta smooth scroll Lenis.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Three.js", "GSAP", "Lenis"],
     // The repo is private, so only the live site is linked.
-    demo: "https://porto-recomp.vercel.app",
+    demo: "https://secreat.site",
   },
   {
     title: "Laravel Multi-Auth Dashboard",
@@ -181,6 +181,7 @@ export const experience: Job[] = [
       "Mengembangkan aplikasi ERP berbasis web dengan Laravel untuk mendigitalkan operasional bisnis klien, terdiri dari tiga modul: kasir (POS), arus kas (pemasukan dan pengeluaran), dan manajemen stok.",
       "Membangun aplikasi POS Android dengan hak akses terpisah untuk admin dan pegawai, laporan penjualan per periode, dan cetak struk langsung.",
       "Merancang dashboard multi-peran dengan Laravel 11, Inertia.js, dan React, dilengkapi autentikasi akun dan verifikasi email.",
+      "Membuat landing page perusahaan Secreat Digital Studio (secreat.site) dengan Next.js, Three.js, GSAP, dan Lenis.",
     ],
   },
   {
@@ -214,7 +215,7 @@ export const education: Education = {
   degree: "Sarjana Terapan (D4) Teknologi Informasi",
   gpa: "3,26 / 4,00",
   thesis: {
-    title: "Rancang Bangun Sistem E-Marketplace Petshop Berbasis Android",
+    title: "Rancang Bangun Sistem E-Marketplace Petshop Berbasis Android dan Web",
     href: "https://github.com/riefkiariyanto/petsecom",
   },
 };
