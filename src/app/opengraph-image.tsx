@@ -3,8 +3,7 @@ import { initials, profile } from "@/data/portfolio";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = `${profile.name} — ${profile.role}`;
-export const dynamic = "force-static";
+export const alt = `${profile.name}, ${profile.role}`;
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -38,7 +37,7 @@ export default function OpengraphImage() {
           {initials}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 28, color: "#e0b060", letterSpacing: 4, textTransform: "uppercase" }}>
+          <div style={{ fontSize: 30, color: "#e0b060" }}>
             {profile.role}
           </div>
           <div style={{ fontSize: 76, fontWeight: 700, marginTop: 12 }}>{profile.name}</div>

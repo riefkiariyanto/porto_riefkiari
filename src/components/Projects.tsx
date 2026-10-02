@@ -3,15 +3,20 @@ import ProjectCard from "./ProjectCard";
 import SectionHeader from "./SectionHeader";
 
 export default function Projects() {
-  const ordered = [...projects].sort(
-    (a, b) => Number(!!b.featured) - Number(!!a.featured) || b.year - a.year,
-  );
+  const byYear = [...projects].sort((a, b) => b.year - a.year);
+  const featured = byYear.filter((project) => project.featured);
+  const rest = byYear.filter((project) => !project.featured);
 
   return (
     <section aria-labelledby="proyek">
-      <SectionHeader id="proyek" eyebrow="Proyek" title="Karya terpilih" />
-      <div className="grid gap-5 sm:grid-cols-2">
-        {ordered.map((project) => (
+      <SectionHeader id="proyek" title="Karya terpilih" />
+      <div className="space-y-5">
+        {featured.map((project) => (
+          <ProjectCard key={project.title} project={project} />
+        ))}
+      </div>
+      <div className="mt-4 divide-y divide-line">
+        {rest.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
-import { profile, site } from "@/data/portfolio";
+import { education, profile, site } from "@/data/portfolio";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const title = `${profile.name} — ${profile.role}`;
+const title = `${profile.name}, ${profile.role}`;
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -28,12 +28,16 @@ const personJsonLd = {
   jobTitle: profile.role,
   description: profile.tagline,
   url: site.url,
+  image: new URL(profile.photo.src, site.url).href,
+  homeLocation: { "@type": "Place", name: profile.location },
+  alumniOf: { "@type": "CollegeOrUniversity", name: education.school },
   email: `mailto:${profile.email}`,
   sameAs: profile.socials.map((social) => social.href),
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  alternates: { canonical: "/" },
   title,
   description: profile.tagline,
   openGraph: {

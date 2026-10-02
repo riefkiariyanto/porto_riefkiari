@@ -57,7 +57,7 @@ export default function ThemeToggle() {
     <div
       role="radiogroup"
       aria-label="Tema tampilan"
-      className="inline-flex rounded-full border border-line bg-surface p-1"
+      className="inline-flex rounded-lg border border-line bg-surface p-0.5"
     >
       {options.map(({ value, label, Icon }) => (
         <button
@@ -68,7 +68,7 @@ export default function ThemeToggle() {
           aria-label={label}
           title={label}
           onClick={() => setTheme(value)}
-          className="grid size-8 place-items-center rounded-full text-muted transition-colors hover:text-fg aria-checked:bg-accent-soft aria-checked:text-accent"
+          className="grid size-11 place-items-center rounded-md text-muted transition-colors hover:text-fg aria-checked:bg-accent-soft aria-checked:text-accent"
         >
           <Icon aria-hidden className="size-4" />
         </button>

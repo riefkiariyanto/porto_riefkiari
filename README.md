@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portofolio Muhammad Riefki Ariyanto
 
-## Getting Started
+Website portofolio pribadi: profil, proyek, rekam jejak, pendidikan, keahlian, dan kontak, dalam Bahasa Indonesia.
 
-First, run the development server:
+## Teknologi
+
+- Next.js 16 (App Router) dan React 19
+- TypeScript
+- Tailwind CSS v4
+- Font lewat `next/font`: Bricolage Grotesque, IBM Plex Sans, JetBrains Mono
+- Ikon: lucide-react
+
+## Menjalankan secara lokal
+
+Butuh Node.js 20 atau lebih baru.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Perintah lain:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint    # ESLint
+npm run build   # build produksi
+npm run start   # jalankan hasil build
+```
 
-## Learn More
+## Mengubah konten
 
-To learn more about Next.js, take a look at the following resources:
+Semua konten ada di [`src/data/portfolio.ts`](src/data/portfolio.ts); komponen hanya membaca data dari sana.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Proyek baru:** tambahkan objek ke `projects`. Isi `demo` dan/atau `repo` bila ada. Tandai satu proyek dengan `featured: true` beserta 3 `metrics` untuk menampilkannya sebagai kartu unggulan.
+- **Pengalaman:** tambahkan ke `experience` dengan `start`/`end` berformat `"YYYY-MM"`; hapus `end` bila masih berjalan.
+- **Commit di blok git log:** isi `hash`, `repo`, `message`, dan `date` (waktu commit dalam format ISO). Waktu relatif ("3 hari yang lalu") dihitung otomatis di browser.
+- **CV:** ganti file [`public/Muhammad_Riefki_Ariyanto_CV.pdf`](public) dengan nama yang sama.
+- **Foto:** `src/data/avatar.webp` adalah potongan 2:3 berukuran 240×360 dari `profilePicture.jpg`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy ke Vercel
 
-## Deploy on Vercel
+1. Di [vercel.com/new](https://vercel.com/new), impor repo ini. Framework Next.js terdeteksi otomatis; tidak perlu mengubah pengaturan build.
+2. URL produksi untuk metadata, sitemap, dan Open Graph diambil otomatis dari `VERCEL_PROJECT_PRODUCTION_URL`.
+3. Bila memakai domain sendiri, tambahkan environment variable `NEXT_PUBLIC_SITE_URL` (contoh: `https://namadomain.com`) lalu deploy ulang.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Setiap push ke branch `main` akan dideploy ulang otomatis oleh Vercel.

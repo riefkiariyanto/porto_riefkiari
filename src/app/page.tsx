@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Sidebar from "@/components/Sidebar";
@@ -14,6 +15,7 @@ export default function Home() {
         <About />
         <Projects />
         <Experience />
+        <Education />
         <Skills />
         <Contact />
         <footer className="border-t border-line pt-6 font-mono text-xs text-muted">

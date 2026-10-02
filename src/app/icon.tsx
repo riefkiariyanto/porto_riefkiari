@@ -3,7 +3,6 @@ import { initials } from "@/data/portfolio";
 
 export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
-export const dynamic = "force-static";
 
 export default function Icon() {
   return new ImageResponse(
