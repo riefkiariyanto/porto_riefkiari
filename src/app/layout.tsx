@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { education, profile, site } from "@/data/portfolio";
 import "./globals.css";
 
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="font-sans">
         {children}
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
